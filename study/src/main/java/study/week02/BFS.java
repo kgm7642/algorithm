@@ -7,6 +7,10 @@ public class BFS {
     static final int N = 8; // 노드 수
     static boolean[] visited = new boolean[N];
 
+    @Autowired()
+    void aaa(People people) {
+
+    }
     public static void bfs(int startVertex) {
         // 시작점 예약
         Queue<Integer> queue = new LinkedList<>();
