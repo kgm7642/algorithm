@@ -3,28 +3,29 @@ package study.week02;
 import java.util.*;
 
 public class BFS {
-    static Map<Integer, List<Integer>> graph = new HashMap<>();
-    static final int N = 8; // 노드 수
-    static boolean[] visited = new boolean[N];
+    public static void main(String[] args) {
+        int[][] graph = {
+                {0, 1, 1, 0, 0},
+                {1, 0, 0, 1, 0},
+                {1, 0, 0, 0, 1},
+                {0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 0}
+        };
 
-    @Autowired()
-    void aaa(People people) {
-
-    }
-    public static void bfs(int startVertex) {
-        // 시작점 예약
+        int n = 5;
+        boolean[] visited = new boolean[n];
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(startVertex);
-        visited[startVertex] = true;
-        // queue가 비어있을 때까지 반복
-        while (!queue.isEmpty()) {
-            // 현재 노드 방문
-            int curVertex = queue.remove();
-            // 다음 노드 예약
-            for (int nextVertex : graph.get(curVertex)) {
-                if (!visited[nextVertex]) {
-                    queue.add(nextVertex);
-                    visited[nextVertex] = true;
+        int start = 0;
+        queue.add(start);
+        visited[start] = true;
+
+        while(!queue.isEmpty()) {
+            int current = queue.poll();
+            System.out.println("방문: " + current);
+            for(int i=0; i<graph.length; i++) {
+                if(graph[current][i]==1 && !visited[i]) {
+                    queue.add(i);
+                    visited[i] = true;
                 }
             }
         }
