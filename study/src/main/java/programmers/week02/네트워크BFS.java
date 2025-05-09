@@ -2,20 +2,17 @@ package programmers.week02;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Study01_BFS {
+public class 네트워크BFS {
     public static void main(String[] args) {
-        Solution1_BFS s = new Solution1_BFS();
         int[][] arr = {
                 {1,1,0},
                 {1,1,0},
                 {0,0,1}
         };
-        System.out.println(s.solution1(3, arr));
+        System.out.println(solution1(3, arr));
     }
-}
 
-class Solution1_BFS {
-    public int solution1(int n, int[][] computers) {
+    public static int solution1(int n, int[][] computers) {
         boolean[] visited = new boolean[n];
         int answer = 0;
         Queue<Integer> queue = new LinkedList<>();
@@ -39,3 +36,4 @@ class Solution1_BFS {
         return answer;
     }
 }
+

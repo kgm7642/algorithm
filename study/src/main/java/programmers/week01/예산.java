@@ -2,15 +2,12 @@ package programmers.week01;
 
 import java.util.Arrays;
 
-public class Study1 {
+public class 예산 {
     public static void main(String[] args) {
-        Solution1 s = new Solution1();
-        System.out.println(s.solution(new int[] {1,3,2,5,4}, 9));
+        System.out.println(solution(new int[] {1,3,2,5,4}, 9));
     }
-}
 
-class Solution1 {
-    public int solution(int[] d, int budget) {
+    public static int solution(int[] d, int budget) {
         int answer = 0;
         Arrays.sort(d);
         int cnt = 0;

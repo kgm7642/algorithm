@@ -3,7 +3,7 @@ package programmers.week02;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Study02 {
+public class KeysandRooms {
     public static void main(String[] args) {
         List<List<Integer>> rooms = new LinkedList<>();
 // 방 0번 열쇠 리스트
@@ -22,7 +22,7 @@ public class Study02 {
         rooms.add(room1);
         rooms.add(room2);
         rooms.add(room3);
-        Study02 study02 = new Study02();
+        KeysandRooms study02 = new KeysandRooms();
         System.out.println(study02.canVisitAllRooms(rooms));
     }
 

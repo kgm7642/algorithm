@@ -1,14 +1,11 @@
 package programmers.week01;
 
-public class Study2 {
+public class 소수만들기 {
     public static void main(String[] args) {
-        Solution2 s = new Solution2();
-        System.out.println(s.solution(new int[] {1,2,7,6,4}));
+        System.out.println(solution(new int[] {1,2,7,6,4}));
     }
-}
 
-class Solution2 {
-    public int solution(int[] nums) {
+    public static int solution(int[] nums) {
         int result = 0;
 
         int sum = 0;

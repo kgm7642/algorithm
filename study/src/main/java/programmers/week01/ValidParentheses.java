@@ -2,15 +2,12 @@ package programmers.week01;
 
 import java.util.*;
 
-public class Study4 {
+public class ValidParentheses {
     public static void main(String[] args) {
-        Solution4 s = new Solution4();
-        System.out.println(s.solution("()[]{}"));
+        System.out.println(solution("()[]{}"));
     }
-}
 
-class Solution4 {
-    public boolean solution(String s)  {
+    public static boolean solution(String s)  {
         Map<Character, Character> map = new HashMap<>();
         map.put(')', '(');
         map.put(']', '[');

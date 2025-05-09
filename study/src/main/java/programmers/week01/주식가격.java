@@ -1,16 +1,11 @@
 package programmers.week01;
 
-import java.util.Arrays;
-
-public class Study6 {
+public class 주식가격 {
     public static void main(String[] args) {
-        Solution6 s = new Solution6();
-        System.out.println(s.solution(new int[] {1, 2, 3, 2, 3}));
+        System.out.println(solution(new int[] {1, 2, 3, 2, 3}));
     }
-}
 
-class Solution6 {
-    public int[] solution(int[] prices) {
+    public static int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
         for(int i=0; i<prices.length-1; i++) {
             int cnt = 0;
