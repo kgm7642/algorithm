@@ -1,4 +1,4 @@
-package programmers.week3;
+package programmers.week03;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -44,7 +44,8 @@ class Solution_이진행렬의최단경로 {
             for(int i=0; i<8; i++) {
                 int cr = r+dr[i];
                 int cc = c+dc[i];
-                if(0<=cr && cr<rowLength && 0<=cc && cc<colLength) {
+
+                if(cr>=0 && cr<rowLength && cc>=0 && cc<colLength) {
                     if(grid[cr][cc]==0 && !visited[cr][cc]) {
                         queue.offer(new int[]{cr, cc, d+1});
                         visited[cr][cc] = true;

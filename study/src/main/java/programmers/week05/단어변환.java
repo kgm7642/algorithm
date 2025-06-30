@@ -1,6 +1,5 @@
-package programmers.week02;
+package programmers.week05;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -16,45 +15,44 @@ public class 단어변환 {
 
 class Solution_단어변환 {
     public int solution(String begin, String target, String[] words) {
-
+//        String[] words = {"hot", "dot", "dog", "lot", "log", "cog"};
         Queue<Word> queue = new LinkedList<>();
         boolean[] visited = new boolean[words.length];
 
         queue.offer(new Word(begin, 0));
 
         while(!queue.isEmpty()) {
-            Word current = queue.poll();
+            Word cur = queue.poll();
             for(int i=0; i< words.length; i++) {
-                if(canChange(current.word, words[i]) && !visited[i]) {
-                    if (words[i].equals(target)) {
-                        return current.count + 1;
-                    }
-                    queue.offer(new Word(words[i], current.count+1));
+                if(isChange(cur.word, words[i]) && !visited[i]) {
                     visited[i] = true;
+                    if(words[i].equals(target)) {
+                        return cur.count+1;
+                    }
+                    queue.offer(new Word(words[i], cur.count+1));
                 }
             }
         }
         return 0;
     }
 
-    public boolean canChange(String a, String b) {
+    boolean isChange(String a, String b) {
         int cnt = 0;
         for(int i=0; i<a.length(); i++) {
             if(a.charAt(i)!=b.charAt(i)) {
-               cnt++;
+                cnt++;
             }
         }
-        return cnt == 1;
+        return cnt==1;
     }
 
-    // 단어와 변환 횟수를 담는 클래스
     static class Word {
         String word;
         int count;
-
         Word(String word, int count) {
             this.word = word;
             this.count = count;
         }
     }
+
 }
